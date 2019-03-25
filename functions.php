@@ -33,12 +33,20 @@ function themecustom_admin_init(){
 //********** action 1
   function themecustom_admin_scripts(){
 
+    if(!isset($_GET['page']) || $_GET['page'] != 'tc_theme_opts'){
+      return;
+    }
+
     //style dans le panneau d'admin
     wp_enqueue_style('themecustom_adm-core', get_template_directory_uri().'/css/bootstrap.min.css',
     array(), 'THEMECUSTOM_VERSION', 'all');
   } //fin fonction chargement des styles dans panneau d'admin
+    add_action('admin_enqueue_scripts', 'themecustom_admin_scripts');
 
-  add_action('admin_enqueue_scripts', 'themecustom_admin_scripts');
+    //******** action 2
+    include('includes/save-options-page.php'); //contient la focntion tc_save_options
+    add_action('admin_post_themecustom_save_options', 'themecustom_save_options');
+
 } //fin de la fonction themecustom_admin_scripts
 
 add_action('admin_init', 'themecustom_admin_init');
