@@ -24,7 +24,7 @@ footer{
 
 /* styles des widgets du footer */
 
-footer .col-3> .inside-widget{
+footer .inside-widget{
   background-color: #d0f0c0;
   border-radius: 3%;
   padding: 2% 5%;
@@ -52,4 +52,24 @@ footer table#wp-calendar caption{
 
 footer table#wp-calendar tfoot tr td{
   padding-top: 10px;
+}
+
+.aligncenter{
+  margin: auto;
+  display: block;
+}
+
+.tc-pagination a, .tc-pagination span{
+  display : inline-block;
+  padding: 0 25px;
+  margin-bottom: 20px;
+}
+
+.tc-pagination a.prev{
+  padding-left: 0;
+}
+
+.tc-pagination span.page-number.current{
+  background-color: #333;
+  color: #ddd;
 }

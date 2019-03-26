@@ -105,7 +105,7 @@ function themecustom_widget_init(){
     'name' => 'Footer Widget Zone',
     'description' => 'Widget affichés dans le footer, 4 max',
     'id' => 'widgetized-footer',
-    'before_widget' => '<div id="%1$s" class="col-3 %2$s"><div class="inside-widget">',
+    'before_widget' => '<div id="%1$s" class="col-xs-12 col-sm-6 col-md-3 %2$s"><div class="inside-widget">',
     'after_widget' => '</div></div>',
     'before_title' => '<h2 class="h3 text-center">',
     'after_title' => '</h2>',
@@ -170,8 +170,9 @@ function themecustom_give_me_meta($date1, $date2, $categories, $tags){
   $chaine .= $date2;
   $chaine .= '</time> dans la categorie ';
   $chaine .= $categories;
+  if(strlen($tags)>0):
   $chaine .= ' avec les étiquettes : '. $tags;
-
+  endif;
   return $chaine;
 }
 

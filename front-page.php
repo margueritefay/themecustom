@@ -52,13 +52,12 @@ $affiche_deux_articles = new WP_Query($args_blog);
   <div class="container">
     <?php
     while(have_posts()): the_post();?>
-      <div class="row">
-        <div class="col-xs-12">
-          <?php
-            the_content();
-           ?>
+        <?php
+          the_title('<h2 class="text-center">', '</h2>');
+        ?>
+        <div class="text-center">
+          <?php the_content(); ?>
         </div>
-      </div>
       <?php endwhile; ?>
   </div>
 
