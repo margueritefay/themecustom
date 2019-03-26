@@ -25,9 +25,9 @@ function themecustom_scripts(){
 add_action('wp_enqueue_scripts', 'themecustom_scripts');
 
 
-//================================================================
-//===================== CHARGEMENT DES STYLES ET SCRIPTS
-//================================================================
+//=============================================================================
+//===================== CHARGEMENT DES STYLES ET SCRIPTS DANS LE BACK OFFICE
+//=============================================================================
 function themecustom_admin_init(){
 
 //********** action 1
@@ -36,12 +36,17 @@ function themecustom_admin_init(){
     if(!isset($_GET['page']) || $_GET['page'] != 'tc_theme_opts'){
       return;
     }
-
-    //style dans le panneau d'admin
+    //chargement style dans le panneau d'admin
     wp_enqueue_style('themecustom_adm-core', get_template_directory_uri().'/css/bootstrap.min.css',
     array(), 'THEMECUSTOM_VERSION', 'all');
+
+    //chargement des scripts admin
+    //wp_enqueue_media permet de rendre le media uploader de wp disponible
+    wp_enqueue_media();
+    wp_enqueue_script('tc-admin-init', get_template_directory_uri() . '/js/admin-options.js',
+    array(), 'THEMECUSTOM_VERSION', true);
   } //fin fonction chargement des styles dans panneau d'admin
-    add_action('admin_enqueue_scripts', 'themecustom_admin_scripts');
+  add_action('admin_enqueue_scripts', 'themecustom_admin_scripts');
 
     //******** action 2
     include('includes/save-options-page.php'); //contient la focntion tc_save_options
@@ -119,6 +124,22 @@ function themecustom_setup(){
 } //fin de la fonction themecustom_setup
 
 add_action('after_setup_theme', 'themecustom_setup');
+
+
+//======================================================================================
+//========================== ajout de la taille medium large pour la sélection image
+//======================================================================================
+
+function my_images_sizes($sizes){
+  $addsizes = array(
+    "medium_large" => "Medium Large"
+  );
+  $newsizes = array_merge($sizes, $addsizes);
+  return $newsizes;
+}
+
+add_filter('image_size_names_choose', 'my_images_sizes');
+
 
 //==============================================================
 //========================== affichage des dates et catégories

@@ -51,6 +51,16 @@
     </header>
     <div class="container">
       <div class="jumbotron">
-        <h1>Premier fichier du thème custom</h1>
+        <?php $theme_options = get_option('tc_options') ?>
+        <div class="row">
+          <div class="col-4">
+            <img class="img-responsive" src="<?php echo $theme_options['image_01_url']; ?>"
+            alt="image en-tête">
+            <p><?php echo $theme_options['legend_01']; ?></p>
+          </div>
+          <div class="col-8">
+            <h1>Page d'accueil du thème custom</h1>
+          </div>
+        </div>
       </div>
     </div><!-- end jumbotron-->
