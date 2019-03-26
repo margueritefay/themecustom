@@ -96,6 +96,23 @@ function themecustom_admin_menus(){
 
 add_action('admin_menu', 'themecustom_admin_menus');
 
+//================================================================
+//===================== AJOUT SIDEBAR ET WIDGET DANS ADMIN
+//================================================================
+
+function themecustom_widget_init(){
+  register_sidebar( array(
+    'name' => 'Footer Widget Zone',
+    'description' => 'Widget affichés dans le footer, 4 max',
+    'id' => 'widgetized-footer',
+    'before_widget' => '<div id="%1$s" class="col-3 %2$s"><div class="inside-widget">',
+    'after_widget' => '</div></div>',
+    'before_title' => '<h2 class="h3 text-center">',
+    'after_title' => '</h2>',
+  ));
+}
+
+add_action('widgets_init', 'themecustom_widget_init');
 
 //================================================================
 //===================== UTILITAIRES

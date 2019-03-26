@@ -14,3 +14,42 @@ Text Domain: themecustom
 .aligncenter{
   margin: auto;
 }
+
+footer{
+  background-color: #98FB98;
+  margin-top: 20px;
+  padding-top: 25px;
+  padding-bottom: 100px;
+}
+
+/* styles des widgets du footer */
+
+footer .col-3> .inside-widget{
+  background-color: #d0f0c0;
+  border-radius: 3%;
+  padding: 2% 5%;
+  min-height: 270px;
+}
+
+footer .col-3 > .inside-widget > h2{
+  margin-bottom: 15px;
+  margin-top: 12px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+footer table#wp-calendar{
+  width: 100%;
+}
+
+footer table#wp-calendar caption{
+  text-align: center;
+  border-bottom: 1px solid #cdcdcd;
+  padding-bottom: 2px;
+  padding-top: 0;
+  margin-bottom: 6px;
+}
+
+footer table#wp-calendar tfoot tr td{
+  padding-top: 10px;
+}
