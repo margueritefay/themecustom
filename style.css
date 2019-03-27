@@ -22,7 +22,20 @@ footer{
   padding-bottom: 100px;
 }
 
-/* styles des widgets du footer */
+
+.aligncenter{
+  margin: auto;
+  display: block;
+}
+
+.jumbotron{
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+/** -------------------------------------------- **/
+/**             Widgets dans le footer           **/
+/** -------------------------------------------- **/
 
 footer .inside-widget{
   background-color: #d0f0c0;
@@ -54,10 +67,10 @@ footer table#wp-calendar tfoot tr td{
   padding-top: 10px;
 }
 
-.aligncenter{
-  margin: auto;
-  display: block;
-}
+
+/** -------------------------------------------- **/
+/**             Pagination du blog               **/
+/** -------------------------------------------- **/
 
 .tc-pagination a, .tc-pagination span{
   display : inline-block;

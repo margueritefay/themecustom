@@ -1,6 +1,10 @@
 <!-- Page permettant l'affichage de la page d'accueil -->
 <?php get_header(); ?>
 
+<!--Chargement du fichier slide-home.php
+permet d'ajouter le slider sur la page d'accueil-->
+<?php get_template_part('slider','home'); ?>
+
 <?php
 $args_blog = array(
   'post_type'=>'post',
@@ -16,24 +20,24 @@ $affiche_deux_articles = new WP_Query($args_blog);
         <?php while($affiche_deux_articles->have_posts()):
               $affiche_deux_articles->the_post(); ?>
           <div class="col-6">
-            <div class="panel panel-default">
-              <div class="panel-heading">
+            <div class="card text-center">
+              <div class="card-header">
                 <h2><?php the_title(); ?></h2>
-                <div class="panel-body">
-                  <p><?php
-                      the_post_thumbnail('medium', array('class' => 'img-responsive aligncenter'));
-                      the_excerpt(); ?></p>
-                  <div class="panel-footer">
-                    <p><?php
-                        echo themecustom_give_me_meta(
-                                          esc_attr( get_the_date('c')),
-                                          esc_html( get_the_date()),
-                                          get_the_category_list(', '),
-                                          get_the_tag_list('', ', ')
-                                        );
-                        ?></p>
-                  </div>
-                </div>
+              </div>
+              <div class="card-body">
+                <p><?php
+                    the_post_thumbnail('medium', array('class' => 'img-responsive aligncenter'));
+                    the_excerpt(); ?></p>
+              </div>
+              <div class="car-footer text-muted">
+                <p><?php
+                    echo themecustom_give_me_meta(
+                                      esc_attr( get_the_date('c')),
+                                      esc_html( get_the_date()),
+                                      get_the_category_list(', '),
+                                      get_the_tag_list('', ', ')
+                                    );
+                    ?></p>
               </div>
             </div>
           </div>

@@ -11,15 +11,22 @@ function themecustom_scripts(){
   //chargement des styles
   wp_enqueue_style('themecustom_bootstrap-core', get_template_directory_uri().'/css/bootstrap.min.css',
   array(), 'THEMECUSTOM_VERSION', 'all');
+
+  wp_enqueue_style('themecustom_bootstrap-core-map', get_template_directory_uri().'/css/bootstrap.min.css.map',
+  array(), 'THEMECUSTOM_VERSION', 'all');
+
   wp_enqueue_style('themecustom_custom', get_template_directory_uri().'/style.css',
-  array('themecustom_bootstrap-core'), 'THEMECUSTOM_VERSION', 'all');
+  array('themecustom_bootstrap-core', 'themecustom_bootstrap-core-map'), 'THEMECUSTOM_VERSION', 'all');
 
   //chargement des scripts
+  wp_enqueue_script('bootstrap-js-map', get_template_directory_uri().'/js/bootstrap.min.js.map',
+  array('jquery'), 'THEMECUSTOM_VERSION', true);
+
   wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/js/bootstrap.min.js',
   array('jquery'), 'THEMECUSTOM_VERSION', true);
 
   wp_enqueue_script('themecustom_admin_script', get_template_directory_uri().'/js/tc.js',
-  array('jquery', 'bootstrap-js'), 'THEMECUSTOM_VERSION', true);
+  array('jquery', 'bootstrap-js', 'bootstrap-js-map'), 'THEMECUSTOM_VERSION', true);
 } //fin fonction chargament style dans front-end
 
 add_action('wp_enqueue_scripts', 'themecustom_scripts');
@@ -123,6 +130,9 @@ function themecustom_setup(){
 
   //rajoute le support pour les images à la une des articles
   add_theme_support('post-thumbnails');
+
+  //crée un format image pour le slider-front
+  add_image_size('front-slider', 1140, 420, true);
 
   //enlève le générateur de Version
   remove_action('wp_head', 'wp_generator');
