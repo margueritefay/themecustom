@@ -50,7 +50,7 @@ $affiche_deux_articles = new WP_Query($args_blog);
 <?php endif; ?>
 
 <!-- Section qui affiche le contenu de la page d'accueil-->
-<section>
+<section class="front-page-content">
   <?php
   if(have_posts()) :?>
   <div class="container">

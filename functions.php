@@ -193,4 +193,87 @@ function themecustom_show_more($more){
   return '<a class="more-link" href="' . get_permalink() .'">'. '[Lire la suite]' . '</a>';
 }
 add_filter('excerpt_more', 'themecustom_show_more');
+
+
+//=============================================================================
+//===================== CPT Slider frontal page d'accueil
+//=============================================================================
+
+function tc_slider_init(){
+  $labels = array(
+    'name' => 'Images Carousel Accueil',
+    'singular_name' => 'Images accueil',
+    'add_new' => 'Ajouter une image',
+    'add_new_item' => 'Ajouter une Image accueil',
+    'edit_item' => 'Editer une Image accueil',
+    'new_item' => 'Nouveau',
+    'all_items' => 'Voir la liste',
+    'view_item' => 'Voir l\'élément',
+    'search_item' => 'Chercher une Image accueil',
+    'not_found' => 'Aucun élément trouvé',
+    'not_found_in_trash' => 'Aucun élément dans la corbeille',
+    'menu_name' => 'Slider frontal'
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false,
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'menu_icon' => get_stylesheet_directory_uri() . '/assets/camera.png',
+    'publicly_queryable' => false,
+    'exclude_from_search' => true,
+    'supports' => array('title', 'editor', 'page-attributes', 'thumbnail')
+  );
+  register_post_type('tc_slider', $args);
+}//end function slider init
+
+add_action('init', 'tc_slider_init');
+
+//=============================================================================
+//===================== Ajout de l'image et ordre dans la colonne admin slider
+//=============================================================================
+
+add_filter('manage_edit-tc_slider_columns', 'tc_col_change'); //change le nom des colonnes
+
+function tc_col_change($columns){
+  $columns['tc_slider_image_order'] = "ordre";
+  $columns['tc_slider_image'] = "image affichée";
+
+  return $columns;
+}
+
+add_action('manage_tc_slider_posts_custom_column', 'tc_content_show', 10, 2); //affiche les images et l'ordre
+
+function tc_content_show($column, $post_id){
+  global $post;
+  if($column == 'tc_slider_image'){
+    echo the_post_thumbnail(array(100, 100));
+  }
+  if($column == 'tc_slider_image_order'){
+    echo $post->menu_order;
+  }
+}
+
+
+//=============================================================================
+//===================== Tri auto sur l'ordre dans la colonne admin slider
+//============================================================================
+
+function tc_change_slides_order($query){
+  global $post_type, $pagenow;
+  if($pagenow == 'edit.php' && $post_type == 'tc_slider'){
+    $query->$query_vars['orderby'] = 'menu_order';
+    $query->$query_vars['order'] = 'asc';
+  }
+}
+
+add_action('pre_get_posts', 'tc_change_slides_order');
  ?>
