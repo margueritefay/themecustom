@@ -6,7 +6,9 @@ Description: Test de theme wordpress custom
 Version: 1.0
 Text Domain: themecustom
 */
-
+body{
+  background-color: #EEE4D2;
+}
 .m-dw-30{
   margin-bottom: 30px;
 }
@@ -76,6 +78,41 @@ footer table#wp-calendar tfoot tr td{
   padding-top: 10px;
 }
 
+/** -------------------------------------------- **/
+/**             Style du carrousel               **/
+/** -------------------------------------------- **/
+section#home-carrousel{
+  background-color: #000;
+}
+
+#slider-01 img{
+  margin: 15px auto;
+}
+
+.carousel-inner .carousel-item h3{
+  font-size: 2.2em;
+  font-weight: bold;
+  animation-delay: 0.4s
+}
+.carousel-inner .carousel-item p{
+  font-size:1.2em;
+  background-color: rgba(0,0,0,0.35);
+  padding: 10px 3%;
+  animation-delay: 1s;
+}
+
+@media(max-width: 500px) {
+  #slider-01 .carousel-inner .carousel-item .carousel-caption {
+    width: 90%;
+    left: 5%;
+  }
+  #slider-01 .carousel-inner .carousel-item .carousel-caption p{
+    text-align: center;
+  }
+  #slider-01 .carousel-inner .carousel-item .carousel-caption a.btn{
+    padding: 3px 6px;
+  }
+}
 
 /** -------------------------------------------- **/
 /**             Pagination du blog               **/

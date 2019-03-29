@@ -11,9 +11,9 @@
  if($slider_query->have_posts()):
  ?>
 
- <section class="m-dw-30">
+ <section id="home-carrousel" class="m-dw-30">
   <div class="container">
-    <div id="slider-01" class="carousel slide" data-ride="carousel">
+    <div id="slider-01" class="carousel slide">
       <!--Indicator-->
       <ol class="carousel-indicators">
         <?php
@@ -42,10 +42,10 @@
               $theclass = "";
             }?>
           <div class="carousel-item <?php echo $theclass; ?>">
-            <img class="d-block w-100" src="<?php echo $thumbnail_src; ?>" alt="<?php echo $alt_value; ?>">
-            <div class="carousel-caption d-none d-md-block">
-              <h3><?php the_title(); ?></h3>
-              <p><?php the_field('sous_titre'); ?></p>
+            <img class="w-100" src="<?php echo $thumbnail_src; ?>" alt="<?php echo $alt_value; ?>">
+            <div class="carousel-caption">
+              <h3 data-animation="animated bounceInDown"><?php the_title(); ?></h3>
+              <p data-animation="animated bounceInDown"><?php the_field('sous_titre'); ?></p>
             </div>
           </div>
         <?php $active_test = false;
