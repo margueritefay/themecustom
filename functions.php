@@ -230,7 +230,7 @@ function tc_slider_init(){
     'menu_icon' => get_stylesheet_directory_uri() . '/assets/camera.png',
     'publicly_queryable' => false,
     'exclude_from_search' => true,
-    'supports' => array('title', 'editor', 'page-attributes', 'thumbnail')
+    'supports' => array('title', 'page-attributes', 'thumbnail')
   );
   register_post_type('tc_slider', $args);
 }//end function slider init
@@ -264,16 +264,13 @@ function tc_content_show($column, $post_id){
 
 
 //=============================================================================
-//===================== Tri auto sur l'ordre dans la colonne admin slider
+//===================== Tri sur l'ordre dans la colonne admin slider
 //============================================================================
 
-function tc_change_slides_order($query){
-  global $post_type, $pagenow;
-  if($pagenow == 'edit.php' && $post_type == 'tc_slider'){
-    $query->$query_vars['orderby'] = 'menu_order';
-    $query->$query_vars['order'] = 'asc';
-  }
-}
+add_filter('manage_edit-tc_slider_sortable_columns', 'my_sortable_tc_slider_column');
 
-add_action('pre_get_posts', 'tc_change_slides_order');
+function my_sortable_tc_slider_column($columns){
+  $columns['tc_slider_image_order']= 'menu_order';
+  return $columns;
+}
  ?>
