@@ -6,6 +6,7 @@ Description: Test de theme wordpress custom
 Version: 1.0
 Text Domain: themecustom
 */
+
 body{
   background-color: #EEE4D2;
 }
@@ -112,6 +113,13 @@ section#home-carrousel{
   #slider-01 .carousel-inner .carousel-item .carousel-caption a.btn{
     padding: 3px 6px;
   }
+}
+
+/** -------------------------------------------- **/
+/**             Style des images cd              **/
+/** -------------------------------------------- **/
+#media-front .card-body, #media-front .card-header {
+  padding: 0;
 }
 
 /** -------------------------------------------- **/

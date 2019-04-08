@@ -17,38 +17,37 @@
       <!--Indicator-->
       <ol class="carousel-indicators">
         <?php
-          $indicator_index = 0;
+        //  $indicator_index = 0;
           while($slider_query->have_posts()) : $slider_query->the_post();
-              echo '<li data-target="#slider-01" data-slide-to="'.$indicator_index.'"
-              class="'.($indicator_index == 0 ? "active" : "").'"></li>';
-              $indicator_index++;
+              echo '<li data-target="#slider-01" data-slide-to="'
+
+              //.$indicator_index
+              .$slider_query->current_post
+              //.'"class="'.($indicator_index == 0 ? "active" : "").'"></li>';
+              .'"class="'.($slider_query->current_post == 0 ? "active" : "").'"></li>';
+
+              //$indicator_index++;
           endwhile; ?>
       </ol>
       <!--wrapper for slides-->
       <div class="carousel-inner">
 
-        <?php $active_test = true;
+        <?php
           while($slider_query->have_posts()) : $slider_query->the_post();
 
             $thumbnail_html = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'front-slider');
             $thumbnail_src=$thumbnail_html['0'];
 
             $alt_value = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt');
-            $alt_value = $alt_value[0];
-            if($active_test){
-              $theclass = " active";
-            }
-            else{
-              $theclass = "";
-            }?>
-          <div class="carousel-item <?php echo $theclass; ?>">
-            <img class="w-100" src="<?php echo $thumbnail_src; ?>" alt="<?php echo $alt_value; ?>">
-            <div class="carousel-caption">
-              <h3 data-animation="animated bounceInDown"><?php the_title(); ?></h3>
-              <p data-animation="animated bounceInDown"><?php the_field('sous_titre'); ?></p>
+            $alt_value = $alt_value[0];?>
+            <div class="carousel-item <?php echo ($slider_query->current_post == 0 ? "active" : ""); ?>">
+              <img class="w-100" src="<?php echo $thumbnail_src; ?>" alt="<?php echo $alt_value; ?>">
+              <div class="carousel-caption">
+                <h3 data-animation="animated bounceInDown"><?php the_title(); ?></h3>
+                <p data-animation="animated bounceInDown"><?php the_field('sous_titre'); ?></p>
+              </div>
             </div>
-          </div>
-        <?php $active_test = false;
+        <?php
         endwhile;
         wp_reset_postdata();?>
       </div>
