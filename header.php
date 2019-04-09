@@ -60,7 +60,8 @@
               <p class="mx-auto"><?php echo stripslashes($theme_options['legend_01']); ?></p>
             </div>
             <div class="col-8">
-              <h1>Page d'accueil du thème custom</h1>
+              <h1>Thème de présentation musique</h1>
+              <p>Vous trouverez dans ce thème tous les élements nécessaires pour vous permettre de créer un thème relatif à la musique.</p>
             </div>
           </div>
         </div>

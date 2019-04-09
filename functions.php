@@ -143,6 +143,8 @@ function themecustom_setup(){
 
   //crée un format image pour le slider-front
   add_image_size('front-slider', 1140, 420, true);
+  add_image_size('up-medium-true', 500, 375, true);
+  add_image_size('up-medium-false', 500, 375, false);
 
   //enlève le générateur de Version
   remove_action('wp_head', 'wp_generator');

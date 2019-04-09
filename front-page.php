@@ -24,14 +24,11 @@ $affiche_quatre_disc = new WP_Query($args_media_front);
           $affiche_quatre_disc->the_post(); ?>
             <article class="col-xs-12 col-sm-6 col-md-3">
               <div class="card text-center">
-                <div class="card-header">
-                  <h4><?php the_title(); ?></h2>
-                </div>
+                <?php
+                    the_post_thumbnail('medium', array('class' => 'card-img-top'));
+                    ?>
                 <div class="card-body">
-                  <p><?php
-                      the_post_thumbnail('thumbnail', array('class' => 'img-responsive aligncenter'));
-                      ?>
-                  </p>
+                  <h4><?php the_title(); ?></h2>
                 </div>
               </div>
             </article>
@@ -63,12 +60,14 @@ $affiche_deux_articles = new WP_Query($args_blog);
           <div class="col-6">
             <div class="card text-center">
               <div class="card-header">
-                <h2><?php the_title(); ?></h2>
+                <h2><a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
               </div>
               <div class="card-body">
-                <p><?php
+                <p><a href ="<?php the_permalink(); ?>"><?php
                     the_post_thumbnail('medium', array('class' => 'img-responsive aligncenter'));
-                    the_excerpt(); ?></p>
+                    ?></a>
+                    <?phpthe_excerpt(); ?>
+                  </p>
               </div>
               <div class="card-footer text-muted">
                 <p><?php
