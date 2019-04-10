@@ -37,6 +37,12 @@ function themecustom_scripts(){
 
   wp_enqueue_script('themecustom_admin_script', get_template_directory_uri().'/js/tc.js',
   array('jquery', 'bootstrap-js', 'bootstrap-js-map'), 'THEMECUSTOM_VERSION', true);
+
+  wp_enqueue_script('themecustom_ajax_script', get_template_directory_uri().'/js/ajax-test.js',
+  array('jquery',), 'THEMECUSTOM_VERSION', true);
+
+  wp_localize_script('themecustom_ajax_script', 'ajaxVars', array('url'=> admin_url('admin-ajax.php'),
+                                                                  'truc' => 'bonjour'));
 } //fin fonction chargament style dans front-end
 
 add_action('wp_enqueue_scripts', 'themecustom_scripts');
