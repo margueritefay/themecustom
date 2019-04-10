@@ -50,21 +50,57 @@
       </nav>
     </header>
     <section>
-      <div class="container">
-        <div class="jumbotron mt-4">
-          <?php $theme_options = get_option('tc_options') ?>
-          <div class="row">
-            <div class="col-4 ">
-              <img class="img-responsive" src="<?php echo $theme_options['image_01_url']; ?>"
-              alt="image en-tête">
-              <p class="mx-auto"><?php echo stripslashes($theme_options['legend_01']); ?></p>
-            </div>
-            <div class="col-8">
-              <h1>Thème de présentation musique</h1>
-              <p>Vous trouverez dans ce thème tous les élements nécessaires pour vous permettre de créer un thème relatif à la musique.</p>
+      <div class="container landing-page-container">
+        <div class="jumbotron landing-page-jumbotron">
+          <div class="text-center">
+            <h1>Voitures d'occasions</h1>
+            <p>Trouvez la voiture de vos rêves.</p>
+          </div>
+            <form>
+              <div class="row d-flex justify-content-center">
+                <div class="form-group mr-2">
+                  <input type="text" class="form-control" id="reseacrchCar" placeholder="Ex : Clio rouge, van essence">
+                </div>
+                <button type="submit" class="btn btn-light">Rechercher</button>
+              </div>
+            </form>
+        </div>
+        <div class="jumbotron garanties-jumbotron">
+          <div class="garanties mx-auto col-xs-12 col-md-10 col-sm-10">
+            <div class="row d-flex justify-content-center">
+              <div class="garantie text-center p-2">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
+                <div>
+                  <b>Véhicules garantis 3 ans</b>
+                  <p>pièce et main d'oeuvre</p>
+                </div>
+              </div>
+              <div class="garantie text-center p-2">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
+                <div>
+                  <b>Véhicules garantis 3 ans</b>
+                  <p>pièce et main d'oeuvre</p>
+                </div>
+              </div>
+              <div class="garantie text-center p-2">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
+                <div>
+                  <b>Véhicules garantis 3 ans</b>
+                  <p>pièce et main d'oeuvre</p>
+                </div>
+              </div>
+              <div class="garantie text-center p-2">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
+                <div>
+                  <b>Véhicules garantis 3 ans</b>
+                  <p>pièce et main d'oeuvre</p>
+                </div>
+              </div>
             </div>
           </div>
+          <h2 class="text-center mb-5">Nos dernières voitures</h2>
         </div>
+
       </div>
     </section>
 <!-- end jumbotron-->

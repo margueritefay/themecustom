@@ -1,11 +1,14 @@
-<?php get_header(); ?>
+<?php get_header();
 
+?>
 <section>
+
   <?php
   if(have_posts()) :?>
   <div class="container">
+
     <?php  while(have_posts()): the_post();
-           get_template_part('content');
+          the_title();
            endwhile;
     ?>
   </div>

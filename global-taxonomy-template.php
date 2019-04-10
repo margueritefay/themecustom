@@ -16,7 +16,7 @@ get_header();
     <section class="media-front">
       <?php
         $arg_taxo_rupt = array(
-          'post_type' => 'tc_media',
+          'post_type' => 'tc_voiture',
           'posts_per_page' => -1,
           'tax_query'=> array(array(
             'taxonomy'=>'genre_mus',

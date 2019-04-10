@@ -1,13 +1,15 @@
-<!-- Page permettant l'affichage de la page d'accueil -->
-<?php get_header(); ?>
+<?php
+/*
+ Template Name: liste des voitures
+*/
+get_header();
 
+?>
 
 <!-- requete qui récupère quatre vignette de disc aléatoire-->
 <?php
 $args_media_front = array(
   'post_type'=>'tc_voiture',
-  'posts_per_page' => 4,
-  'order_by' =>'rand'
 );
 $affiche_quatre_disc = new WP_Query($args_media_front);
 ?>
@@ -34,9 +36,6 @@ $affiche_quatre_disc = new WP_Query($args_media_front);
             </article>
         <?php endwhile;
         wp_reset_postdata(); ?>
-      </div>
-      <div class="toutes-voitures mt-3 d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary btn-lg">Voir toutes nos voitures</button>
       </div>
     </div>
   </section>

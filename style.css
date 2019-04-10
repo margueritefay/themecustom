@@ -7,9 +7,6 @@ Version: 1.0
 Text Domain: themecustom
 */
 
-body{
-  background-color: #EEE4D2;
-}
 .m-dw-30{
   margin-bottom: 30px;
 }
@@ -39,11 +36,40 @@ footer{
 /** -------------------------------------------- **/
 /**             Contenu de la page d'accueil     **/
 /** -------------------------------------------- **/
+.landing-page-container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.landing-page-jumbotron{
+  background-image: url('assets/backgroundimage.jpg');
+  color: white;
+  min-height: 300px;
+  padding-bottom: 250px;
+  margin-bottom: -35px;
+}
 
 .front-page-content, .wp-block-image, .wp-block-gallery {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.garanties{
+  background-color: white;
+  margin-top: -100px;
+  margin-bottom: 70px;
+}
+
+.garantie img{
+  max-width: 50px;
+  max-height: 50px;
+}
+
+#media-front{
+  background-color: white;
+  margin-top: 25px;
+}
+
 
 /** -------------------------------------------- **/
 /**             Widgets dans le footer           **/
