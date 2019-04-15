@@ -10,6 +10,7 @@ get_header();
 <?php
 $args_media_front = array(
   'post_type'=>'tc_voiture',
+  'posts_per_page' => 12
 );
 $affiche_quatre_disc = new WP_Query($args_media_front);
 ?>
@@ -20,7 +21,8 @@ $affiche_quatre_disc = new WP_Query($args_media_front);
     <div class="container m-dw-30">
       <div class="row">
         <?php while($affiche_quatre_disc->have_posts()):
-          $affiche_quatre_disc->the_post(); ?>
+          $affiche_quatre_disc->the_post();
+           ?>
             <article class="col-xs-12 col-sm-6 col-md-3">
               <div class="card text-center">
                 <?php

@@ -36,7 +36,7 @@ $affiche_quatre_disc = new WP_Query($args_media_front);
         wp_reset_postdata(); ?>
       </div>
       <div class="toutes-voitures mt-3 d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary btn-lg">Voir toutes nos voitures</button>
+        <a href="liste-voiture"></a>  <button type="button" class="bouton-type">Voir toutes nos voitures</button>
       </div>
     </div>
   </section>

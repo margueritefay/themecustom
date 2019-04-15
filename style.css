@@ -6,7 +6,13 @@ Description: Test de theme wordpress custom
 Version: 1.0
 Text Domain: themecustom
 */
-
+body{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.menu-haut{
+  margin-left: 150px;
+}
 .m-dw-30{
   margin-bottom: 30px;
 }
@@ -33,6 +39,11 @@ footer{
   padding-bottom: 12px;
 }
 
+.logo-voiture{
+  max-width: 50px;
+  max-height: 50px;
+}
+
 /** -------------------------------------------- **/
 /**             Contenu de la page d'accueil     **/
 /** -------------------------------------------- **/
@@ -44,9 +55,35 @@ footer{
 .landing-page-jumbotron{
   background-image: url('assets/backgroundimage.jpg');
   color: white;
-  min-height: 300px;
+  max-height: 350px;
   padding-bottom: 250px;
   margin-bottom: -35px;
+}
+
+.txt-sous-garantie{
+  width: 50px;
+  border-top: 1px solid black;
+}
+
+.bouton-submit-icon{
+  background-color: #FFD300;
+  border: 0;
+  max-height: 38px;
+  margin-left: -10px;
+  margin-top: 0px;
+}
+
+.search-form-landing input{
+  border-radius: 0;
+  border: 0;
+}
+
+.submit-icon{
+  color: white;
+}
+
+.garanties-jumbotron, .landing-page-jumbotron{
+  border-radius: 0;
 }
 
 .front-page-content, .wp-block-image, .wp-block-gallery {
@@ -57,7 +94,7 @@ footer{
 .garanties{
   background-color: white;
   margin-top: -100px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .garantie img{
@@ -65,44 +102,39 @@ footer{
   max-height: 50px;
 }
 
+.garantie-txt, .footer-garantie-txt{
+  font-size: 0.7em;
+  margin-top: 20px;
+}
+
 #media-front{
   background-color: white;
   margin-top: 25px;
 }
 
+.bouton-type{
+  background-color: #FFD300;
+  border: 0;
+  min-height: 45px;
+  width: 250px;
+}
+
 
 /** -------------------------------------------- **/
-/**             Widgets dans le footer           **/
+/**             css du footer                    **/
 /** -------------------------------------------- **/
 
-footer .inside-widget{
-  background-color: #d0f0c0;
-  border-radius: 3%;
-  padding: 2% 5%;
-  min-height: 270px;
+footer {
+  background-color: #464646;
+  padding-bottom: 20px;
 }
 
-footer .col-3 > .inside-widget > h2{
-  margin-bottom: 15px;
-  margin-top: 12px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid black;
+.footer-garantie-txt{
+  color: white;
 }
 
-footer table#wp-calendar{
-  width: 100%;
-}
-
-footer table#wp-calendar caption{
-  text-align: center;
-  border-bottom: 1px solid #cdcdcd;
-  padding-bottom: 2px;
-  padding-top: 0;
-  margin-bottom: 6px;
-}
-
-footer table#wp-calendar tfoot tr td{
-  padding-top: 10px;
+.footer-icon{
+  color: #FFD300;
 }
 
 /** -------------------------------------------- **/

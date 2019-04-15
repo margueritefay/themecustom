@@ -29,7 +29,7 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Home theme custom</a>
+        <a class="navbar-brand" href="#"><img class="logo-voiture" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo-voiture.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,52 +53,54 @@
       <div class="container landing-page-container">
         <div class="jumbotron landing-page-jumbotron">
           <div class="text-center">
-            <h1>Voitures d'occasions</h1>
+            <h1 class="mt-4">Voitures d'occasions</h1>
             <p>Trouvez la voiture de vos rêves.</p>
           </div>
             <form>
               <div class="row d-flex justify-content-center">
-                <div class="form-group mr-2">
+                <div class="form-group mr-2 search-form-landing">
                   <input type="text" class="form-control" id="reseacrchCar" placeholder="Ex : Clio rouge, van essence">
                 </div>
-                <button type="submit" class="btn btn-light">Rechercher</button>
+                <button type="submit" class="bouton-submit-icon"> <i class="fa fa-search submit-icon" aria-hidden="true"></i></button>
               </div>
             </form>
         </div>
         <div class="jumbotron garanties-jumbotron">
           <div class="garanties mx-auto col-xs-12 col-md-10 col-sm-10">
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-around">
               <div class="garantie text-center p-2">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
-                <div>
+                <div class="garantie-txt">
                   <b>Véhicules garantis 3 ans</b>
                   <p>pièce et main d'oeuvre</p>
                 </div>
               </div>
               <div class="garantie text-center p-2">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
-                <div>
+                <div  class="garantie-txt">
                   <b>Véhicules garantis 3 ans</b>
                   <p>pièce et main d'oeuvre</p>
                 </div>
               </div>
               <div class="garantie text-center p-2">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
-                <div>
+                <div class="garantie-txt">
                   <b>Véhicules garantis 3 ans</b>
                   <p>pièce et main d'oeuvre</p>
                 </div>
               </div>
               <div class="garantie text-center p-2">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/garantie-icon.png" alt="">
-                <div>
+                <div class="garantie-txt">
                   <b>Véhicules garantis 3 ans</b>
                   <p>pièce et main d'oeuvre</p>
                 </div>
               </div>
             </div>
           </div>
-          <h2 class="text-center mb-5">Nos dernières voitures</h2>
+          <h2 class="text-center mb-2">Nos dernières voitures</h2>
+          <div class="txt-sous-garantie mx-auto mb-2">
+          </div>
         </div>
 
       </div>
